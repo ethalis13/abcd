@@ -1,0 +1,694 @@
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #2d2d2d;
+  line-height: 1.6;
+  background: #fafafa;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── Header / Nav ── */
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: #c0392b;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: url('picture/wave.jpg') center/150px repeat;
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.nav-bar {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #fff;
+}
+
+/* ── Dropdown ── */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+  padding: 8px 0;
+  margin: 0;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+  z-index: 200;
+}
+
+.dropdown::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-menu li {
+  padding: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 9px 20px;
+  font-size: 0.9rem;
+  color: #333 !important;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+}
+
+.dropdown-menu a:hover {
+  background: #f5f5f5;
+  color: #c0392b !important;
+}
+
+/* ── Hero Map ── */
+.hero-map {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 40px;
+  min-height: calc(92vh - 64px);
+  background: #fff;
+  color: #2d2d2d;
+  position: relative;
+}
+
+.hero-map::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('picture/wave.jpg') center/300px repeat;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.hero-map > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-map-text {
+  max-width: 420px;
+}
+
+.hero-map-text h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.hero-map-text p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* ── Sidebar Spots ── */
+.sidebar-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #c0392b;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.sidebar-spots {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.sidebar-spots::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-spots::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.sidebar-spot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  padding: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-spot:hover {
+  background: #fff;
+  transform: translateX(4px);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-spot-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.sidebar-spot-info {
+  min-width: 0;
+}
+
+.sidebar-spot-info .spot-region {
+  display: block;
+  font-size: 0.7rem;
+  margin-bottom: 2px;
+}
+
+.sidebar-spot-info h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2d2d2d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── SVG Map ── */
+.japan-map-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.japan-map {
+  width: 520px;
+  height: auto;
+  display: block;
+}
+
+.japan-map .region {
+  cursor: pointer;
+}
+
+.japan-map .region path,
+.japan-map .region circle {
+  stroke: #999;
+  stroke-width: 1;
+  transition: filter 0.3s, opacity 0.3s;
+}
+
+.japan-map .region:hover path,
+.japan-map .region:hover circle {
+  fill: #c0392b !important;
+  stroke: #a33226;
+  stroke-width: 1.5;
+}
+
+.japan-map .region text,
+.japan-map .region .region-text {
+  fill: #333;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  text-anchor: middle;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.japan-map .region:hover text,
+.japan-map .region:hover .region-text {
+  opacity: 1;
+  fill: #fff;
+}
+
+/* ── Region Tooltip (in text area) ── */
+.region-tooltip {
+  display: none;
+  color: #2d2d2d;
+}
+
+.region-tooltip.visible {
+  display: block;
+}
+
+.region-tooltip h3 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #c0392b;
+  margin-bottom: 12px;
+}
+
+.region-tooltip p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.tooltip-click-hint {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #c0392b;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 14px 36px;
+  background: #c0392b;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background: #a93226;
+  transform: translateY(-2px);
+}
+
+/* ── Features ── */
+.features {
+  padding: 72px 0 56px;
+  background: #fff;
+}
+
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 36px;
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.feature h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.feature p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* ── Spots Grid ── */
+.spots-section {
+  padding: 72px 0 80px;
+}
+
+.spots-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.spots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.spot-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.spot-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.spot-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.spot-info {
+  padding: 20px;
+}
+
+.spot-region {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #c0392b;
+  margin-bottom: 6px;
+}
+
+.spot-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.spot-info p {
+  font-size: 0.92rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+  margin-top: 64px;
+  padding: 14px 0;
+  background: #f5f5f5;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.breadcrumb .container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+}
+
+.breadcrumb a {
+  color: #c0392b;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb .separator {
+  color: #aaa;
+}
+
+.breadcrumb .current {
+  color: #666;
+  font-weight: 500;
+}
+
+/* ── Plan Your Trip Page ── */
+.plan-section {
+  padding: 56px 0;
+}
+
+.plan-section:nth-child(even) {
+  background: #f5f5f5;
+}
+
+.plan-section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.season-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.season-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-top: 4px solid #c0392b;
+}
+
+.season-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+  color: #c0392b;
+}
+
+.season-card .season-months {
+  font-size: 0.82rem;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.season-card p {
+  font-size: 0.92rem;
+  color: #555;
+  line-height: 1.55;
+}
+
+.tip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.tip-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.tip-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.tip-card p {
+  font-size: 0.92rem;
+  color: #555;
+  line-height: 1.55;
+}
+
+.itinerary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.itinerary-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid #c0392b;
+}
+
+.itinerary-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  color: #c0392b;
+}
+
+.itinerary-card p {
+  font-size: 0.92rem;
+  color: #555;
+  line-height: 1.55;
+}
+
+/* ── Region Page Hero ── */
+.breadcrumb + .region-hero {
+  margin-top: 0;
+}
+
+.region-hero {
+  margin-top: 64px;
+  padding: 80px 40px;
+  text-align: center;
+  color: #fff;
+}
+
+.region-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.region-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── Region Spots Section ── */
+.region-spots {
+  padding: 64px 0 72px;
+}
+
+.region-spots h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* ── Region Info Section ── */
+.region-info {
+  padding: 56px 0 72px;
+  background: #f0f0f0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 36px;
+}
+
+.info-block {
+  background: #fff;
+  padding: 28px 32px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.info-block h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  color: #c0392b;
+}
+
+.info-block p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ── Footer ── */
+.site-footer {
+  padding: 28px 0;
+  text-align: center;
+  background: #2d2d2d;
+  color: #aaa;
+  font-size: 0.88rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero-map {
+    flex-direction: column;
+    gap: 32px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero-map-text h1 {
+    font-size: 2rem;
+  }
+
+  .japan-map {
+    width: 360px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .spots-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    display: none;
+  }
+}
