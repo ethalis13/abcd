@@ -140,16 +140,95 @@ ul {
   color: #c0392b !important;
 }
 
+/* ── Homepage Layout ── */
+.homepage-layout {
+  display: flex;
+  margin-top: 64px;
+  min-height: auto;
+}
+
+/* ── Sidebar ── */
+.sidebar-spots {
+  width: 260px;
+  flex-shrink: 0;
+  background: #f7f7f7;
+  border-right: 1px solid #eee;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sidebar-heading {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #c0392b;
+  margin-bottom: 2px;
+}
+
+.sidebar-spot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 7px 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-spot:hover {
+  background: #fff;
+  transform: translateX(4px);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-spot-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.sidebar-spot-info {
+  min-width: 0;
+}
+
+.sidebar-spot-info span {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: #c0392b;
+  margin-bottom: 1px;
+}
+
+.sidebar-spot-info h4 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #2d2d2d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* ── Hero Map ── */
 .hero-map {
-  margin-top: 64px;
+  flex: 1;
   display: flex;
   flex-direction: row-reverse;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 60px;
   padding: 60px 40px;
-  min-height: calc(92vh - 64px);
+  min-height: 100%;
   background: #fff;
   color: #2d2d2d;
   position: relative;
@@ -187,81 +266,6 @@ ul {
   line-height: 1.6;
 }
 
-/* ── Sidebar Spots ── */
-.sidebar-heading {
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #c0392b;
-  margin-top: 20px;
-  margin-bottom: 12px;
-}
-
-.sidebar-spots {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-height: 380px;
-  overflow-y: auto;
-  padding-right: 6px;
-}
-
-.sidebar-spots::-webkit-scrollbar {
-  width: 4px;
-}
-
-.sidebar-spots::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
-}
-
-.sidebar-spot {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 10px;
-  padding: 8px;
-  text-decoration: none;
-  color: inherit;
-  transition: background 0.2s, transform 0.15s;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
-}
-
-.sidebar-spot:hover {
-  background: #fff;
-  transform: translateX(4px);
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-}
-
-.sidebar-spot-img {
-  width: 56px;
-  height: 56px;
-  border-radius: 8px;
-  background-size: cover;
-  background-position: center;
-  flex-shrink: 0;
-}
-
-.sidebar-spot-info {
-  min-width: 0;
-}
-
-.sidebar-spot-info .spot-region {
-  display: block;
-  font-size: 0.7rem;
-  margin-bottom: 2px;
-}
-
-.sidebar-spot-info h4 {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #2d2d2d;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 
 /* ── SVG Map ── */
 .japan-map-wrapper {
@@ -663,6 +667,24 @@ ul {
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  .homepage-layout {
+    flex-direction: column;
+  }
+
+  .sidebar-spots {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding: 14px 16px;
+  }
+
+  .sidebar-spot {
+    min-width: 200px;
+  }
+
   .hero-map {
     flex-direction: column;
     gap: 32px;
