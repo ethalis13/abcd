@@ -261,7 +261,8 @@ ul {
 
 .hero-map-text p {
   font-size: 1.1rem;
-  opacity: 0.85;
+  opacity: 1;
+  color: #333;
   margin-bottom: 12px;
   line-height: 1.6;
 }
@@ -335,7 +336,7 @@ ul {
 .region-tooltip p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #555;
+  color: #333;
   margin-bottom: 20px;
 }
 
@@ -390,7 +391,7 @@ ul {
 
 .feature p {
   font-size: 0.95rem;
-  color: #666;
+  color: #444;
 }
 
 /* ── Spots Grid ── */
@@ -451,7 +452,7 @@ ul {
 
 .spot-info p {
   font-size: 0.92rem;
-  color: #666;
+  color: #444;
   line-height: 1.5;
 }
 
@@ -481,11 +482,11 @@ ul {
 }
 
 .breadcrumb .separator {
-  color: #aaa;
+  color: #777;
 }
 
 .breadcrumb .current {
-  color: #666;
+  color: #444;
   font-weight: 500;
 }
 
@@ -527,13 +528,13 @@ ul {
 
 .season-card .season-months {
   font-size: 0.82rem;
-  color: #999;
+  color: #666;
   margin-bottom: 10px;
 }
 
 .season-card p {
   font-size: 0.92rem;
-  color: #555;
+  color: #333;
   line-height: 1.55;
 }
 
@@ -558,7 +559,7 @@ ul {
 
 .tip-card p {
   font-size: 0.92rem;
-  color: #555;
+  color: #333;
   line-height: 1.55;
 }
 
@@ -584,7 +585,7 @@ ul {
 
 .itinerary-card p {
   font-size: 0.92rem;
-  color: #555;
+  color: #333;
   line-height: 1.55;
 }
 
@@ -652,7 +653,7 @@ ul {
 
 .info-block p {
   font-size: 0.95rem;
-  color: #555;
+  color: #333;
   line-height: 1.6;
 }
 
@@ -661,7 +662,7 @@ ul {
   padding: 28px 0;
   text-align: center;
   background: #2d2d2d;
-  color: #aaa;
+  color: #ccc;
   font-size: 0.88rem;
 }
 
